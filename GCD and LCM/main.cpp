@@ -20,7 +20,6 @@ void main(){
     cin >> x;
     cout << "y: ";
     cin >> y;
-
     Solution sol;
     cout << "GCD of " << x << " and " << y << " is " <<  sol.gcd(x,y) << endl;
     cout << "LCM of " << x << " and " << y << " is " <<  sol.lcm(x,y) << endl;
