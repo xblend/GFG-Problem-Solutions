@@ -13,7 +13,6 @@ class Solution{
             if(number%i==0 || number%(i+2)==0)//Checking two conditions
                 return false;
         return true;
-
     }
 };
 
