@@ -2,6 +2,7 @@
 
 using namespace std;
 
+//This solution used Theta(log(n)) time and Theta(log(n)) auxilarly space
 class Solution{
     public:
     int power(int x, int n){
