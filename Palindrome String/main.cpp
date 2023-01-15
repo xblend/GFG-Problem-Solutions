@@ -6,11 +6,9 @@ using namespace std;
 class Solution{
     public:
     bool isPalindrome(string str, int start, int end){
-        if(start==end || start==(end-1))
+        if(start>=end)
             return true;
-        if(str[start]!=str[end])
-            return false;
-        return isPalindrome(str, start+1, end-1);
+        return (str[start]==str[end]) && isPalindrome(str, start+1, end-1);
     }
 };
 
