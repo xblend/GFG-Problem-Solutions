@@ -9,20 +9,22 @@ using namespace std;
 
 class Solution{
     public:
-    void towerOfHanoi(int n, stack<int> &a, stack<int> &b, stack<int> &c){
+    void towerOfHanoi(int n, stack<int> &a, stack<int> &b, stack<int> &c, char x, char y, char z){
         if(a.empty())
             return;
         if(n==1){
+            cout << "Moving " << a.top() << " from " << x << " to " << z << endl;
             c.push(a.top());
             a.pop();
             return;
         }
-        towerOfHanoi(n-1,a,c,b);
+        towerOfHanoi(n-1,a,c,b,x,z,y);
         if(!a.empty()){
+            cout << "Moving " << a.top() << " from " << x << " to " << z << endl;
             c.push(a.top());
             a.pop();
         }
-        towerOfHanoi(n-1,b,a,c);
+        towerOfHanoi(n-1,b,a,c,y,x,z);
     }
 };
 
@@ -51,7 +53,7 @@ void main(){
 
     cout << "C is an empty stack? " << (c.empty() ? "Yes" : "No") << endl;
     cout << "Calling Tower of Hanoi function" << endl;
-    sol.towerOfHanoi(a.size(),a,b,c);
+    sol.towerOfHanoi(a.size(),a,b,c,'A','B','C');
 
     cout << "Contents of stack C are:" << endl << "_____" << endl << endl;
     while(!c.empty()){
