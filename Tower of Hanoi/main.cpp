@@ -10,8 +10,6 @@ using namespace std;
 class Solution{
     public:
     void towerOfHanoi(int n, stack<int> &a, stack<int> &b, stack<int> &c, char x, char y, char z){
-        if(a.empty())
-            return;
         if(n==1){
             cout << "Moving " << a.top() << " from " << x << " to " << z << endl;
             c.push(a.top());
@@ -19,11 +17,9 @@ class Solution{
             return;
         }
         towerOfHanoi(n-1,a,c,b,x,z,y);
-        if(!a.empty()){
-            cout << "Moving " << a.top() << " from " << x << " to " << z << endl;
-            c.push(a.top());
-            a.pop();
-        }
+        cout << "Moving " << a.top() << " from " << x << " to " << z << endl;
+        c.push(a.top());
+        a.pop();
         towerOfHanoi(n-1,b,a,c,y,x,z);
     }
 };
