@@ -41,7 +41,7 @@ class Solution{
                 cout << "F";
                 break;
             default:
-                cout << number%16;
+                cout << temp;
         }
         
     }
